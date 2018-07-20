@@ -110,8 +110,7 @@ contract PWT is ERC20,owned{
         symbol = tokenSymbol;                               // Set the symbol for display purposes
         decimals = decimalUnits;                            // Amount of decimals for display purposes
 	} 
-
-    /** Destroy tokens */
+	
     function burn(uint256 _value) public onlyOwner returns (bool success) {
 		_balances[msg.sender]=_balances[msg.sender].sub(_value);
 		totalSupply=totalSupply.sub(_value);
@@ -167,6 +166,3 @@ contract PWT is ERC20,owned{
       return _allowed[_owner][_spender];
     }
 }
-
-
-
